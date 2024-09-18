@@ -1,10 +1,10 @@
 "use strict";
-const applePrice = 10;
-const a = 20;
-const b = 45;
-const c = 20;
-const d = 45;
-// explicitly type declaration
+const applePrice = 10; // here is not explicitly define type but type script is too smart , type script can define it implicitly and its call inference
+const a = 20; //inference
+const b = []; //inference
+const c = 'love'; //inference
+const d = {}; //inference
+// explicitly type declaration || here we can declare type  with  Type Annotations
 let playerName = "Mashrafi"; // use type
 let age = 34;
 function multiply(a, b) {
@@ -40,3 +40,52 @@ bx.number = 5;
 bx.gender = "male";
 bx.adult = false;
 console.log(bx);
+// how to use function
+const myFunc = () => {
+    console.log('hello ! ');
+};
+myFunc();
+const myFunc1 = () => {
+    return 5 * 4;
+};
+console.log(myFunc1());
+function abcd() {
+    return 5 * 5;
+}
+let func;
+func = () => {
+    return "hello world";
+};
+// function parameter
+const multiplyTwoNumber = (a, b, c, d = 'Riye') => {
+    console.log(b + ' ' + d);
+    return a * 5;
+};
+multiplyTwoNumber(4, 'hello my dear');
+const admin = {
+    name: 'Rakib',
+    role: 'admin',
+    gender: 'male',
+    age: 23
+};
+const member = {
+    name: 'Islam',
+    role: 'member',
+    gender: 'male',
+    age: 24
+};
+//Function signatures
+let add; // here it is a function signatures bellow is main function based on above signatures.
+add = (a, b) => {
+    return a * b;
+};
+let calculation;
+calculation = (a, b, c) => {
+    if (c === 'minus') {
+        return a + b;
+    }
+    else {
+        return a - b;
+    }
+};
+console.log(calculation(4, 5, 'add'));
