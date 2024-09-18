@@ -89,3 +89,17 @@ calculation = (a, b, c) => {
     }
 };
 console.log(calculation(4, 5, 'add'));
+//generics:
+const addId = (obj) => {
+    console.log(obj, 'generic');
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { id });
+};
+let user = addId({
+    name: "Mashrafi",
+    age: 40,
+    country: 'Bangladesh',
+    PM: 'Seikh Hasina'
+});
+// let plaer = 'Sakib al hasan'
+// addId(plaer)

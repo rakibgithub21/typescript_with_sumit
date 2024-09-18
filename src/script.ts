@@ -158,4 +158,23 @@ calculation = (a:number,b:number,c:string) => {
     }
 }
 
-console.log(calculation(4,5,'add'))
+console.log(calculation(4, 5, 'add'))
+
+
+//generics:
+
+const addId = <T extends { name: string, age: number, country: string, PM:string}>(obj: T) => {
+    console.log(obj,'generic');
+    let id = Math.floor(Math.random() * 100);
+    return { ...obj,id}
+}
+
+let user = addId({
+    name: "Mashrafi",
+    age: 40,
+    country: 'Bangladesh',
+    PM:'Seikh Hasina'
+})
+
+// let plaer = 'Sakib al hasan'
+// addId(plaer)
